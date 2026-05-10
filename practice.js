@@ -1,4 +1,4 @@
-// variables: (var, let, const)
+]// variables: (var, let, const)
 /*
 var x = 10;    // var - old & not safe, redeclaration
 let y = 12;   // let - modern & safe, not-redeclaration
@@ -458,6 +458,125 @@ const counter = outer();  // here counter will store the inner function of outer
 counter();   // cnt = 1
 counter();   // cnt = 2
 */
+
+// IIFE: Immediate Invoked Function Expression
+// structure:
+/*
+(function (){
+
+})();
+*/
+/*
+(function () {
+    console.log("This is Immediately!");
+})();
+*/
+// USes for creating private variable.
+
+// Task 1: Write a BMI calculator:
+/*
+function bmi(weight, height) {
+    return (weight / (height * height));
+}
+
+console.log(bmi(71, 1.6).toFixed(4));
+*/
+
+// Task 2: Create a reusable discount calculator
+/*
+function disCalc(discount) {      // HOF (High order func)
+    return function (price) {
+        return price - price * (discount / 100);
+    }
+}
+
+let ten = disCalc(10);     // it will take the inner function
+let twenty = disCalc(20);  // it will also take the inner function
+
+// inner func ke easy usable kore dibe ten() & twenty()
+console.log(ten(200));   // just price te dibo aar eta 10% discount kore dibe
+console.log(twenty(1600));    // given price er 20% discount
+*/
+
+// Task 3: Create a pure function to transform a value
+/*
+function double(val) {
+    return 2 * val;
+}
+
+console.log(double(15));
+*/
+
+// Task 4: Use IIFE to isolate variable
+/*
+(function () {
+    const password = "secret pass";
+    console.log(password);   // given "secret pass"
+})();
+
+console.log(password);  // given error, this is now private variable can't use in global
+*/
+
+// Arrays:
+/*
+let arr = [10, 93, 67, 17, 45, 98];
+
+console.log(arr[0]);
+console.log(arr[1]);
+console.log(arr[2]);
+console.log(arr[5]);
+*/
+
+// Modify Array:
+/*
+let a = [1, 2, 3, 4, 5];
+
+a[3] = 12;
+console.log(a);
+*/
+
+// Array Methods: (same as built-in function for c++ but here 'A func that belongs to a specific class or object')
+/*
+let arr = [1, 2, 3, 4, 5];
+
+arr.push(100);
+console.log(arr);
+
+arr.pop();   // remove the last ele from arr
+console.log(arr);
+
+arr.shift();   // remove from the first ele of arr
+console.log(arr);
+
+arr.unshift(10);   // add from the first in arr
+console.log(arr);
+
+arr.splice(2, 1);  // remove ele from the middle of the arr,  splice(start_position_to_removing, how_many_ele_will_remove)
+console.log(arr);
+
+let newarr = arr.slice(0, 2);  // copy main array's ele to a new array; slice(start_position_of_copying, ending_position_of_copying-1)
+console.log(newarr);
+console.log(arr);    // it doesn't change the main array
+
+// slice makes a copy of main array while splice change the main array.
+
+arr.reverse();
+console.log(arr);
+
+// sort e always function deya laage, (a-b) dile ascending order, (b-a) dile descending order (its not just about a & b, it can be anything)
+let asc = arr.sort(function (a, b) {  // ascending order
+    return a - b;
+});
+console.log(asc);
+
+let desc = arr.sort(function (a, b) {   // descending order
+    return b - a;
+});
+console.log(desc);
+*/
+
+
+
 
 
 
