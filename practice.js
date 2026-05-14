@@ -1,4 +1,4 @@
-]// variables: (var, let, const)
+// variables: (var, let, const)
 /*
 var x = 10;    // var - old & not safe, redeclaration
 let y = 12;   // let - modern & safe, not-redeclaration
@@ -574,6 +574,111 @@ let desc = arr.sort(function (a, b) {   // descending order
 });
 console.log(desc);
 */
+
+// For-each loop:  it accepts the function to print.
+/*
+let arr = [11, 62, 17, 29, 5];
+
+arr.forEach(function (val) {
+    console.log(val);
+});
+console.log('\n');
+arr.forEach(function (val) {
+    console.log(val + 5);
+});
+*/
+
+// Map: helps to create the new array
+/*
+let arr = [11, 62, 9, 17, 29, 5];
+
+let newarr = arr.map(function (val) {
+    return;
+});
+console.log(newarr);  // undefined for 5 length new array
+
+let newarr2 = arr.map(function (val) {
+    if (val > 10) return val;
+});
+console.log(newarr2)
+*/
+
+// Filter:
+/*
+let arr = [11, 62, 9, 17, 29, 5];
+
+let newarr = arr.filter(function (val) {  // if val is >10 then pick it in newarr else not
+    if (val > 10) return true;
+});
+console.log(newarr);
+*/
+
+// Reduce:
+/*
+let arr = [1, 2, 3, 4, 10];
+let ans = arr.reduce(function (accumulator, val) {  // here, accumulator is a variable which will track its own val for reduce the arr, its initial val is 0, which is also initialize here
+    return accumulator + val;
+}, 0);
+console.log(ans);
+*/
+
+// Find:
+/*
+let arr = [1, 2, 3, 4, 10];
+let found = arr.find(function (val) {
+    return val == 4;
+});
+console.log(found);
+*/
+/*
+let arr = [{ id: 1, key: 10 }, { id: 2, key: 20 }, { id: 3, key: 30 }];
+let ans = arr.find(function (val) {
+    return val.key == 20;
+});
+console.log(ans);
+*/
+
+// Some: given ans on true/false.
+/*
+let arr = [89, 84, 23, 37, 8];
+let ans = arr.some(function (val) {
+    return val > 85;
+});
+console.log(ans);
+*/
+
+// Every:
+/*
+let arr = [10, 45, 30, 90];
+let ans = arr.every(function (val) {
+    //return val > 5;   // return true because all ele is >5
+    return val > 15;   // return false because  10 is less than 15
+});
+console.log(ans);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
