@@ -657,16 +657,59 @@ let ans = arr.every(function (val) {
 console.log(ans);
 */
 
+// Destructuring: unpack data into variables.
+/*
+let colors = ["red", "green", "yellow", "pink"];
+let [first, second, fourth] = colors;
 
+console.log(first);
+console.log(second);
+console.log(fourth);  // it will give "yellow" means its follow the order
+*/
+/*
+let arr = [1, 2, 3, 4, 5];
+let [a, b, d] = arr;
+console.log(a, b, d);
+*/
 
+// Spread Operator: make a copy from the original (using ... [3 dots])
+/*
+let arr1 = [1, 2];
+let arr2 = [...arr1, 3, 4];
+console.log(arr2);
+*/
 
+// Array Questions:
 
+// Q1: Create an array with 3 fruits & print the 2nd one?
+/*
+let arr = ["Apple", "Guava", "Banana"];
+console.log(arr[1]);
+*/
 
+// Q2: Add mango in the end & pineapple at the beginning?
+/*
+let arr = ["Apple", "Guava", "Banana"];
+arr.push("Mango");
+arr.unshift("Pineapple");
+console.log(arr);
+*/
 
+// Q3: [Apple, Banana] in array, pop banana and replace it with "Kiwi".
+// Method 1
+/*
+let fruits = ["Apple", "Banana"];
+fruits.pop();
+fruits.push("Kiwi");
+console.log(fruits);
+*/
 
-
-
-
+// Method 2:
+/*
+let fruits = ["Apple", "Banana"];
+fruits[1] = "Kiwi";
+console.log(fruits);
+*/
 
 
 
