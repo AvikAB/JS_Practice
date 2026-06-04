@@ -711,20 +711,375 @@ fruits[1] = "Kiwi";
 console.log(fruits);
 */
 
+// Q4: Remove the last item from this array using method.
+/*
+let arr = [1, 2, 3, 4];
+arr.pop();
+console.log(arr);
+*/
 
+// Q5: Insert "Red", "Blue" at index 1 in this array:
+/*
+let arr = ["Green", "Yellow"];
+arr.splice(1, 0, "Red", "Blue");   // {idx, how_many_ele_will_removed, adding_eles}
+console.log(arr);
+*/
 
+// Q6: Extract only the middle 3 elements from the array: [1,2,3,4,5,6]
+/*
+let nums = [1, 2, 3, 4, 5, 6];
+let newnums = nums.slice(1, 4);
+console.log(newnums);
+*/
 
+// Q7: Sort the array alphabetically & reverse them.
+/*
+let names = ["Zara", "Arjun", "Mira", "Mukta", "Tahmina"];
+names.sort().reverse();
+console.log(names);
+*/
 
+// Q8: Use .map() to square each number:
+/*
+let nums = [1, 2, 3, 4];
+let newnums = nums.map(function (val) {
+    return val * val;
+});
+console.log(newnums);
+*/
 
+// Q9: Use .filter() to keep nums greater than 10:
+/*
+let arr = [5, 12, 8, 20, 3];
+let newarr = arr.filter((val) => {
+    return val > 10;
+});
+console.log(newarr);
+*/
 
+// Q10. Use .reduce() to find the sum of this array:
+/*
+let arr = [10, 20, 30];
+let total = arr.reduce(function (sum, val) {
+    return sum + val;
+}, 0);
+console.log(total);
+*/
 
+// Q11: Use .find() to get the first number less than 10:
+/*
+let arr = [12, 15, 3, 8, 10];
+let neww = arr.find(function (val) {
+    return val < 10;
+});
+console.log(neww);
+*/
 
+// Q12. Use .some() to check if any student has scored below 35:
+/*
+let arr = [45, 60, 28, 90];
+let neww = arr.some(function (val) {
+    return val < 35;
+});
+console.log(neww);
+*/
 
+// Q13. Use .every() to check if all nums are even:
+/*
+let arr = [2, 4, 6, 8, 10];
+let neww = arr.every(function (val) {
+    return val % 2 === 0;
+});
+console.log(neww);
+*/
 
+// Q14. Destructure this array to get firstName & lastName:
+/*
+let full = ["Avik", "Das"];
+let [firstName, lastName] = full;
+console.log(firstName);
+console.log(lastName);
+*/
 
+// Q15. Merge two arrays using spread operator:
+/*
+let a = [1, 2];
+let b = [3, 4];
+let c = [...a, ...b];
+console.log(c);
+*/
 
+// Q16. Add "BD" to the start of this array using spread:
+/*
+let countries = ["USA", "UK"];
+countries = ["BD", ...countries];
+console.log(countries);
+*/
 
+// Q17. Clone this array properly (not by reference):
+/*
+let arr = [1, 2, 3];
+let arr2 = [...arr];
+console.log(arr2);
+*/
 
+// OBJECTS:
+// used to keep details of an entity.
+/*
+let obj = {
+    name: "avik",
+    age: 25,
+    food: "biriyani",
+};
 
+// can view the data using . (dot) & [].
+console.log(obj.name);
+console.log(obj['name']);
+*/
+
+// Why . and [] use here to view?  (Dot, bracket notation)
+/*
+let aa = "name";
+obj.aa;
+In that case, in the obj object its directly will find the aa. Its not convert aa to "name" and then find.
+Means using .(dot), after . it will directly find that keyword to the obj.
+
+obj[aa] will do this, it convert obj[aa] to obj["name"].
+*/
+
+// Key-value structure: in obj, name:"avik"; is known as key-val struture where name is key, "avik" is val.
+
+// Nesting & Deep Access:
+/*
+const user = {   // here user is the obj & address, locations are nested obj of it
+    name: "Avik",
+    address: {
+        city: "Rajshahi",
+        pin: 1662,
+        location: {
+            lat: 23.2,
+            lng: 71.17,
+        },
+    },
+};
+console.log(user.address.location.lng);
+*/
+
+// Object Destructuring: (uses in backend)
+/*
+const user = {
+    name: "Avik",
+    address: {
+        city: "Rajshahi",
+        pin: 1662,
+        location: {
+            lat: 23.2,
+            lng: 71.17,
+        },
+    },
+};
+let { lat, lng } = user.address.location;
+console.log(lat);
+console.log(lng);
+*/
+
+//Looping: for-in, Object.keys(), Object.entries()
+/*
+let obj = {
+    name: "avik",
+    age: 24,
+    email: "test@test.com",
+}
+*/
+/*
+for (let key in obj) {    // loop for object traversal 'for (let variable_name in object_name){};'
+    console.log(key, obj[key]);   // {key, value}
+}
+*/
+// Object.keys(object_name): when need to convert keys into an array.
+// Object.entries(object_name): It gives array of arrays, given all data of it.
+/*
+console.log(Object.keys(obj));
+console.log(Object.entries(obj));
+*/
+
+// Copying objects: spread, Obejct.assign, deep clone
+// Spread: using {...old_object_name} just copy the object to another object. Known as shallow copy.
+/*
+let obj = {
+    name: "avik",
+    age: 24,
+    email: "test@test.com",
+}
+let obj2 = { ...obj };
+console.log(obj2);
+*/
+
+// Object.assign: Object.assign({}, object_name_which_gonna_copy); {} is blank obj, Put any data in blank obj, create key, val in the object. Not uses too much
+/*
+let obj = {
+    name: "avik",
+    age: 24,
+    email: "test@test.com",
+}
+let obj2 = Object.assign({}, obj);
+let obj3 = Object.assign({ price: Infinity }, obj);  // add price in the obj as the first entity
+console.log(obj2);
+console.log(obj3);
+*/
+
+// Deep Clone: Nested object thakle spread diye copy hoi na, pass by reference hoi. Kono change korle main object eo change hoye jai ei problem er jonnei use hoi deep clone.
+/*
+let obj = {
+    name: "avik",
+    age: 24,
+    email: "test@test.com",
+    address: {
+        city: "Rajshahi",
+    }
+}
+let obj2 = { ...obj };
+obj2.address.city = "Dhaka";
+console.log(obj2);
+console.log(obj);       // obj's city also is changed
+*/
+
+/*
+let obj = {
+    name: "avik",
+    age: 24,
+    email: "test@test.com",
+    address: {
+        city: "Rajshahi",
+    }
+}
+let obj2 = JSON.parse(JSON.stringify(obj)); // JSON.stringify obj ke string e convert korbe, tarpor abar setake real form e ante parse use korbe, ekahen copy hoi reference hoi na
+console.log(obj2);   // its 'Rajshahi'
+obj2.address.city = "Dhaka";
+console.log(obj2);   // Now its 'Dhaka'
+console.log(obj);    // obj remains same as 'Rajshahi'
+*/
+
+// Optional Chaining: object er majhe error handle korte use hoi.
+/*
+let obj = {
+    name: "avik",
+    age: 24,
+    email: "test@test.com",
+    addresses: {
+        city: "Rajshahi",
+    }
+}
+//console.log(obj.address.city);  // its given error because of typing mistake of 'addresses'
+// Handle this issue using optional chaining.
+
+console.log(obj?.adress?.city);  // undefined
+// it doesn't given error it will give undefined. (obj?.adress?.city) means obj er moddhe adress name e kichu exist kore ki na, jodi kore thaole or moddhe thaka city jodi exist kore tahole ta print koro
+console.log(obj?.addresses?.city);
+*/
+
+// Computed Properties: Object er baire variable ache, oi variable er value er naame ekta entity banate hobe object er vitore, ekhane help kore computed properties.
+/*
+let role = "admin";
+let obj = {
+    name: "avik",
+    age: 24,
+    email: "test@test.com",
+    addresses: {
+        city: "Rajshahi",
+    },
+    [role]: "avi",  // admin hobe 'avi', [var_name] = new_val
+}
+console.log(obj);
+*/
+
+// QUESTIONS:
+
+// Q1: Create an object for a student with name, age & isEnrolled:
+/*
+let obj = {
+    name: "avik",
+    age: 24,
+    isEnrolled: true,
+}
+console.log(obj);
+*/
+
+// Q2: Can an object key be a number or bool: YES
+/*
+let obj = {
+    true: "yes",
+    17: "answer",
+}
+console.log(obj[17]);
+console.log(obj[true]);
+*/
+
+// Q3: Access the value of "first-name" from this object:
+/*
+const user = {
+    "first-name": "avik",
+};
+console.log(user["first-name"]);   // we can't use user.first-name; here
+*/
+
+// Q4: Given a dynamic key let key="age", how you will access user[key]?
+/*
+let key = "age";
+const user = {
+    age: 26,
+}
+console.log(user[key]);
+*/
+
+// Q5: Destructure the city & lat from the location object above:
+/*
+let locations = {
+    city: "Dhaka",
+    coord: {
+        lat: 23.3,
+        lang: 77.6,
+    },
+}
+
+let { city } = locations;
+let { lat } = locations.coord;
+console.log(city, lat);
+*/
+
+// Q6: Destucture the key "first-name" as a variable called firstName:
+/*
+const user = {
+    "first-name": "avik",
+}
+let { "first-name": firstName } = user;
+console.log(firstName);
+*/
+
+// Q7: Use Object.entries() to print all key-val pairs as:
+/*
+const course = {
+    title: "JS",
+    duration: "1 month",
+}
+
+Object.entries(course).forEach(function (val) {
+    console.log(val[0] + ": " + val[1]);
+});
+*/
+
+// Q8: Deep clone the obj1 safely: change the score=100 in clone obj
+/*
+const obj1 = {
+    info: {
+        score: 80,
+    }
+}
+
+let newobj = JSON.parse(JSON.stringify(obj1));
+newobj.info.score = 100;
+console.log(newobj);
+console.log(obj1)
+*/
 
 
